@@ -8,7 +8,7 @@ WORKDIR /app
 COPY run.py web_scarpping.py secret.py /app/
 
 # Install the required Python packages
-RUN python -m pip install --no-cache-dir package1 package2 package3
+RUN python -m pip install --no-cache-dir python-telegram-bot==13.7 requests==2.31.0 bs4==0.0.1
 
 # Start the bot when the container runs
 CMD ["python", "run.py"]
