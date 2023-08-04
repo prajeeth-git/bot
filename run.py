@@ -1,6 +1,7 @@
 from telegram import Update,InlineKeyboardButton,InlineKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters,CallbackQueryHandler
 from web_scarpping import AttendanceScraper
+import os
 scraper = AttendanceScraper()
 
 print("Server is running.... ")
@@ -76,7 +77,7 @@ def message_handler_function(update: Update, context):
     update.message.reply_text("I'm sorry, I don't understand that command. Please use one of the available commands.")
 
 # Create an Updater instance using your bot token
-updater = Updater(token=secret.API_KEY, use_context=True)
+updater = Updater(token=os.environ.get('API_KEY'), use_context=True)
 
 # Get the Dispatcher instance from the Updater
 dispatcher = updater.dispatcher
