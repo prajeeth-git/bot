@@ -1,6 +1,5 @@
 from telegram import Update,InlineKeyboardButton,InlineKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters,CallbackQueryHandler
-import secret
 from web_scarpping import AttendanceScraper
 scraper = AttendanceScraper()
 
